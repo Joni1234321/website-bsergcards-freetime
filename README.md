@@ -20,6 +20,3 @@ i would then change "Project" to "ChangeProject", which then becomes https://bse
 
 ## What is this
 A website i created in my free time, it is used to store information about personal ongoing projects
-
-
-## How to add project
