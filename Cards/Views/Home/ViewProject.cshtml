@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Projects";
+    // asp-area="" asp-controller="Home" asp-action="Products"
+}
+
+<div class="title">
+    <h1> PROJECTS </h1>
+</div>
+<div class="projects">
+    <a href="@Url.Action("Project", "Home", new { id = "0" })">
+        <div class="project titlecard active">
+            <div class="heading">
+                <p>BSERG 2.0</p>
+            </div>
+        </div>
+    </a>
+    <a href="@Url.Action("Project", "Home", new { id = "1" })">
+        <div class="project titlecard active">
+            <div class="heading">
+                <p>BRØND WELL</p>
+            </div>
+        </div>
+    </a>
+    <a href="@Url.Action("Project", "Home", new { id = "2" })">
+        <div class="project titlecard active">
+            <div class="heading">
+                <p>REPLAY</p>
+            </div>
+        </div>
+    </a>
+    <a href="@Url.Action("Project", "Home", new { id = "3" })">
+        <div class="project titlecard finished">
+            <div class="heading">
+                <p>
+                    Hjemmeside
+                </p>
+            </div>
+        </div>
+    </a>
+    <div class="project titlecard finished">
+        <div class="heading">
+            <p>
+                K01
+            </p>
+        </div>
+    </div>
+
+    <div class="project titlecard finished">
+        <div class="heading">
+            <p>
+                BSERG 1.0
+            </p>
+        </div>
+    </div>
+
+
+    <div class="project titlecard todo">
+        <div class="heading">
+            <p>
+                ASP.NET
+            </p>
+        </div>
+    </div>
+
+    <div class="project titlecard todo">
+        <div class="heading">
+            <p>
+                SPOTIFY
+            </p>
+        </div>
+    </div>
+
+    <div class="project titlecard todo">
+        <div class="heading">
+            <p>
+                BLE
+            </p>
+        </div>
+    </div>
+</div>   

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/css/colors.css" />
+
+    <link rel="stylesheet" href="~/css/center.css" />
+    <link rel="stylesheet" href="~/css/change.css" />
+    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="~/css/projects.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <content>
+        <header>
+            <div class="navbar">
+                <div>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                </div>
+                <div>
+                    <a asp-area="" asp-controller="Home" asp-action="Projects">
+                       PROJECTS
+                    </a>
+                </div>
+                <div>
+                    <!--<a asp-area="" asp-controller="Home" asp-action="Products">PRODUCTS</a>-->
+                </div>
+            </div>
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer>
+            <p>Website layout designed for PC</p>
+        </footer>
+    </content>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

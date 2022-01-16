@@ -1,0 +1,132 @@
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px 30px;
+    margin: 10px 0px;
+
+}
+
+.project {
+    color: ivory;
+
+    background-color:black;
+    
+    height: 400px; 
+    transition: .2s;
+}
+.project:hover {
+    cursor:pointer;
+    transform: scale(1.02);
+}
+
+.project>.heading {
+    text-align: center;
+    font-size: 40px;
+    
+    color:white;
+    text-decoration: underline #D95D39;
+    transition: .2s;
+}
+
+.project>.heading>*, .project>.content>* {
+    font-size: inherit;
+}
+.project>.content {
+    font-size: 20px;
+}
+.project>.content p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.proj {
+    background-color: var(--project-content);
+}
+
+
+
+.project.active>.heading {
+    background-color: var(--project-heading);
+}
+.project.finished>.heading {
+    background-color: var(--main-light);
+}
+.project.todo>.heading {
+    background-color: var(--main-blue);
+}
+
+.titlecard {
+    position: relative;
+}
+.titlecard.active {
+    background-color: var(--project-heading);
+}
+.titlecard.finished {
+    background-color: var(--main-light);
+}
+.titlecard.todo {
+    background-color: var(--main-blue);
+}
+
+.titlecard>div {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/*Display only if hovering over */
+.title-splitter {
+    display: flex;
+}
+.tagviewer {
+    opacity: 0.0;   
+    min-width: 100px;
+    margin-left: 20px;
+    color:white;
+    flex-grow: 1;
+    transition: .2s;
+}
+
+.tagviewer>.files>* {
+    padding: 5px 10px;
+    font-size: 14px;
+    display: inline-block;
+}
+.active .tagviewer, 
+.active .banner, 
+.active .textbox-large .image>p {
+    background-color: var(--project-heading);
+}
+.finished .tagviewer, 
+.finished .banner, 
+.finished .textbox-large .image>p{
+    background-color: var(--main-light);
+}
+.todo .tagviewer, 
+.todo .banner,
+.todo .textbox-large .image>p {
+    background-color: var(--main-blue);
+}
+
+
+.problem>.heading {
+    background-color: inherit;
+}
+.checkpoints > .heading {
+    background-color: inherit;
+}
+.solutions > .heading {
+    background-color: inherit;
+}
+
+.title-splitter:hover {
+    cursor: default;
+}
+.title-splitter:hover .tagviewer {
+    opacity: .85;   
+    transition: 0.3s;
+}

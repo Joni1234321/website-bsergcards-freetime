@@ -1,0 +1,93 @@
+﻿@model TextBoxReference
+
+@{
+    ViewData["Title"] = "Change Text Box";
+    TextBox textbox = Model?.TextBox;
+
+    string[] textBoxTypes = Enum.GetNames(typeof(ColorsData.Models.MTextBox.TextBoxType));
+    string[] elementTypes = Enum.GetNames(typeof(ColorsData.Models.MTextBoxElement.ElementType));
+}
+<h1>Change Text Box</h1>
+<h2>
+    <a href="@Url.Action("Change", "Home", new { id = Model?.ProjectId })"> @Model?.ProjectTitle </a>
+    -
+    <a href="@Url.Action("Change", "Home", new { id = Model?.ProjectId, n = Model?.TextBoxIndex })"> @Model?.TextBox?.Title </a>
+</h2>
+<br />
+
+@if (Model != null && textbox != null)
+{
+    <form asp-action="UpdateTextBox">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="change-main">
+            <div>
+                <input asp-for="ProjectId" type="hidden" value="@Model.ProjectId" />
+                <input asp-for="ProjectTitle" type="hidden" value="@Model.ProjectTitle" />
+                <input asp-for="TextBoxIndex" type="hidden" value="@Model.TextBoxIndex" />
+
+                <input asp-for="TextBox.Id" type="hidden" value="@textbox.Id" />
+            </div>
+            <div>
+                <label asp-for="TextBox.Title"></label>
+                <input asp-for="TextBox.Title" value="@textbox.Title" autocomplete="off" />
+            </div>
+            <div>
+                <label asp-for="TextBox.Type"></label>
+                <select asp-for="TextBox.Type">
+                    @for (int enumIndex = 0; enumIndex < textBoxTypes.Length; enumIndex++)
+                    {
+                        if ((int)textbox.Type == enumIndex)
+                        {
+                            <option value="@enumIndex" selected>
+                                @textBoxTypes[enumIndex]
+                            </option>
+                        }
+                        else
+                        {
+                            <option value="@enumIndex">
+                                @textBoxTypes[enumIndex]
+                            </option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="change-sub">
+            @for (int n = 0; n < textbox.Elements.Count; n++)
+            {
+                @Html.HiddenFor(m => m.TextBox.Elements[n].Id)
+                <div class="change-element">
+                    @Html.TextBoxFor(m => m.TextBox.Elements[n].Content, new { @autocomplete = "off" })
+                    <select asp-for="TextBox.Elements[n].Type">
+                        @for (int enumIndex = 0; enumIndex < elementTypes.Length; enumIndex++)
+                        {
+                            if ((int)textbox.Elements[n].Type == enumIndex)
+                            {
+                                <option value="@enumIndex" selected>
+                                    @elementTypes[enumIndex]
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@enumIndex">
+                                    @elementTypes[enumIndex]
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+            }
+        </div>
+
+        <input class="change-submit" type="submit" value="Apply changes" />
+    </form>
+    <div class="change-sub">
+        <form asp-action="AddElement">
+            @Html.HiddenFor(m => m.ProjectId)
+            @Html.HiddenFor(m => m.TextBox.Id)
+            @Html.HiddenFor(m => m.TextBoxIndex)
+
+            <input class="add-submit" type="submit" value="Add" />
+        </form>
+    </div>
+}

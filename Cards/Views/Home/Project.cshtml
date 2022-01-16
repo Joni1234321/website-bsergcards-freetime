@@ -1,0 +1,70 @@
+﻿@model Project
+
+@{
+    ViewData["Title"] = "Project";
+}
+
+<div class="center" id="project-page">
+    <div class="@Model?.StatusToClass() ">
+        <div class="title-splitter">
+            <div class="title">
+                <h2> @Model?.Title </h2>
+                <h3> - PROJECTS </h3>
+            </div>
+            <div class="tagviewer">
+                <div class="files">
+                    @if (Model != null) foreach (var item in Model.Tags)
+                        {
+                            <p>
+                                @Html.DisplayFor(modelItem => item)
+                            </p>
+                        }
+                </div>
+            </div>
+        </div>
+        @if (Model != null) foreach (var item in Model.TextBoxes)
+            {
+
+                <div class="textbox-large @item.TypeToClass() ">
+                    <div class="heading">
+                        <h1>@item.Title</h1>
+                    </div>
+                    <div class="content">
+                        <div class="banner"></div>
+                        @{
+                            string contentContainer = item.Type == ColorsData.Models.MTextBox.TextBoxType.Checkpoints ? "<ul>{0}</ul>" : "{0}";
+                            string innerContent = "";
+                            if (item?.Elements != null) foreach (var element in item.Elements)
+                                {
+                                    if (element.Type == ColorsData.Models.MTextBoxElement.ElementType.Image)
+                                    {
+                                        string path = "/Uploads/" + element.getImgPath();
+                                        <div class="image">
+                                            <img src="@path">
+
+                                            <p>@element.getImgCaption()</p>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        string itemHtml = "";
+                                        switch (item.Type)
+                                        {
+                                            case ColorsData.Models.MTextBox.TextBoxType.Checkpoints:
+                                                itemHtml = string.Format("<{0}>{1}</{0}>", "li", "<p>" + element.Content + "</p>");
+                                                break;
+                                            default:
+                                                itemHtml = itemHtml = "<p>" + element.Content + "</p>";
+                                                break;
+                                        }
+                                        innerContent += itemHtml;
+                                    }
+                                }
+
+                            @Html.Raw(string.Format(contentContainer, innerContent))
+                        }
+                    </div>
+                </div>
+            }
+    </div>
+</div>

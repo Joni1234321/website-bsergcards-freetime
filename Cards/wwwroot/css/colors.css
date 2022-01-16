@@ -1,0 +1,52 @@
+/*
+https://coolors.co/495867-577399-bdd5ea-f7f7ff-fe5f55
+#495867
+#577399
+#BDD5EA
+#F7F7FF
+#FE5F55
+
+
+*/
+
+/*
+Darker red and blue
+https://coolors.co/242526-393e41-102430-fe5f55-991309
+#242526
+#393E41
+#102430
+#FE5F55
+#991309
+
+
+# 0B6E4F -green
+
+
+GREEN PALETTE
+https://coolors.co/0ac47d-07b06f-0b8f5c-277356-1b362b
+*/
+:root {
+    --c1: #242526ff;
+    --c2: #393e41ff;
+    --c3: #102430ff;
+    --c4: #fe5f55ff;
+    --c5: #991309ff;
+    --c6: #ccccccff;
+
+    --main-orange: #FE5F00;
+    --main-blue: #5688C7;
+    --main-green: #0B6E4F;
+
+    --main-dark: #102430;
+    --main-light: #318a43;
+    
+    --header-dark: #102430;
+    --header-hover: #B4ADA3;
+    --header-color: #7C90A0;
+
+    --project-heading: #C90443;
+    --project-content: #210810;
+}
+
+
+

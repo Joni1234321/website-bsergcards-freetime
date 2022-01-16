@@ -1,0 +1,75 @@
+﻿@model Project
+
+@{
+    ViewData["Title"] = "Change Project";
+
+    string[] projectTypes = Enum.GetNames(typeof(ColorsData.Models.MProject.Type));
+}
+
+<h1>Change Project</h1>
+<h2>
+    <a href="@Url.Action("Change", "Home", new { id = Model?.Id })">@Model?.Title </a>
+</h2>
+<br />
+
+@if (Model != null)
+{
+    <form asp-action="UpdateProject">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="change-main">
+            <div>
+                @Html.HiddenFor(m => m.Id)
+            </div>
+            <div>
+                <label asp-for="Title"></label>
+                <input asp-for="Title" value="@Model.Title" autocomplete="off" />
+            </div>
+            <div>
+                <label asp-for="Status"></label>
+                <select asp-for="Status">
+                    @for (int enumIndex = 0; enumIndex < projectTypes.Length; enumIndex++)
+                    {
+                        if ((int)Model.Status == enumIndex)
+                        {
+                            <option value="@enumIndex" selected>
+                                @projectTypes[enumIndex]
+                            </option>
+                        }
+                        else
+                        {
+                            <option value="@enumIndex">
+                                @projectTypes[enumIndex]
+                            </option>
+                        }
+                    }
+                </select>
+            </div>
+            <div>
+                <label asp-for="Tags"></label>
+                <input asp-for="Tags" value="@String.Join(',', Model.Tags)" autocomplete="off" />
+            </div>
+
+            <input class="change-submit" type="submit" value="Apply changes" />
+        </div>
+    </form>
+
+    <div class="change-sub">
+        @for (int n = 0; n < Model.TextBoxes.Count; n++)
+        {
+            <a href="@Url.Action("Change", "Home", new { id = Model.Id, n = n})">
+                <div>
+                    <p>@Model.TextBoxes[n].Title</p>
+                </div>
+            </a>
+        }
+
+        <form asp-action="AddTextBox">
+            @Html.HiddenFor(m => m.Id)
+            <input class="add-submit" type="submit" value="Add" />
+        </form>
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

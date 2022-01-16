@@ -1,0 +1,14 @@
+﻿@model string 
+@{
+    ViewData["Title"] = "404";
+}
+
+<h1>404</h1>
+@if (Model.Length != 0)
+{
+    <h2>@Model not found</h2>
+}
+else
+{
+    <h2>Page not found</h2>
+}

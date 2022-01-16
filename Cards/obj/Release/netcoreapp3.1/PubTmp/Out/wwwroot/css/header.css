@@ -1,0 +1,22 @@
+.navbar {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.navbar>* {
+    float: left;
+    margin-right: 4px;
+    
+    height: 100%;
+    text-align: center;
+}
+.navbar a {
+    display: block;
+    font-size: 20px;
+    padding: 15px 10px;
+}
+
+.navbar a:hover {
+    color: var(--header-hover);
+}

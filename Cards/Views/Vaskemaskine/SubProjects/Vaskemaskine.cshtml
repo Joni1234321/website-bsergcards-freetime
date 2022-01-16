@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<script type="text/javascript" src="~/SubProjects/Vaskemaskiner/GetTimeJs.js"></script>
+<div style="display:grid; grid-template-columns:170px 80px 10px 180px 10px 80px;">
+    @for (int i = 1; i <= 9; i++)
+    {
+        <p>Vaskemaskine @i -</p>
+        <p style="margin: auto;" id="timer-@i"> </p>
+        <p style="margin: auto;"> - </p>
+        <p style="margin: auto;" id="status-@i"> </p>
+        <p style="margin: auto;"> - </p>
+        <p style="margin: auto;" id="reserved-@i"> </p>
+    }
+</div>
+<button onclick="update()">Update</button>
+<div>
+    <p style="display:inline-block;">
+        Last updated - 
+    </p>
+
+    <p style="margin-left: 10px;display:inline-block;" id="last-updated">
+        
+    </p>
+</div>

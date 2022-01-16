@@ -1,0 +1,61 @@
+﻿.change-main * {
+    font-size: 20px;
+}
+
+.change-main, .change-sub {
+    width: 100%;
+}
+
+    .change-main > div > * {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 40px;
+    }
+
+    .change-main > div > input {
+        text-align: center;
+    }
+
+.change-main {
+    margin: auto;
+    display: block;
+    width: 95%;
+    padding: 10px;
+    background-color: cadetblue;
+}
+
+
+.change-sub {
+    margin-top: 30px;
+    width: 95%;
+    margin: 30px auto auto auto;
+}
+
+
+
+.change-sub > * {
+    margin: 10px auto;
+    height: 40px;
+    background-color: chocolate;
+    text-align: center;
+    display: block;
+}
+
+.change-sub * * {
+    font-size: 18px;
+}
+
+.change-sub > .change-element {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 100px;
+    grid-gap: 30px;
+}
+
+.change-submit {
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    width: 30%;
+    height: 50px;
+}

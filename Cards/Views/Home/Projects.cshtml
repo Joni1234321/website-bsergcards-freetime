@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Project>
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<h1>Projects</h1>
+<div class="projects">
+    @foreach (var item in Model)
+    {
+        <a asp-action="Project" asp-route-id="@item.Id">
+            <div class="project titlecard @item.StatusToClass()">
+                <div class="heading">
+                    <p>
+                        @item.Title
+                    </p>
+                </div>
+            </div>
+        </a>
+    }
+</div>

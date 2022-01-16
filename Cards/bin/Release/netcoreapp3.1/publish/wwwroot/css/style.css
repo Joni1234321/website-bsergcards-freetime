@@ -1,0 +1,86 @@
+@font-face {
+    font-family: thinFont;
+    src: url(font/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+body {
+    font-family:thinFont;
+    color:ivory;
+    margin: auto;
+    height: 100vh;
+}
+content {
+    display: grid;
+    grid-template-rows: 50px auto 50px;
+    height: 100%;
+
+}
+header {
+    background-color: var(--header-dark);
+    font-weight: bold;
+}
+main {
+    background-color: var(--main-green);
+    overflow: auto;
+}
+footer {
+    background-color: var(--c1);
+}
+p, h1, h2, h3, h4, h5, h6, a {
+    margin: 0;
+}
+content>* {
+    padding: 0 10%;
+}
+
+a {
+    cursor: pointer;
+    color:inherit;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 88px;
+}
+h2 {
+    font-size: 42px;
+}
+h3 {
+    font-size: 28px;
+}
+p {
+    padding: 10px 0;
+    font-size: 20px;
+}
+ul {
+    margin: 0;
+    list-style-type: square;
+}
+li {
+    padding: 5px 0;
+    font-size: 20px;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+main>*:first-child {
+    padding-top: 15px;
+}
+main>.title {
+    cursor: default;
+    margin-bottom: 30px;
+}
+main>.title>h1 {
+    font-size: 88px;
+}
+main>.title>h2 {
+    font-size: 64px;
+}
+main>.title>h3 {
+    position: relative;
+    left: 20px;
+    font-size: 28px;
+}
