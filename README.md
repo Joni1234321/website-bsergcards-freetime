@@ -18,6 +18,8 @@ For example
 i have created a project with the URL https://bsergcards.azurewebsites.net/Project/6, and i want to change it!
 i would then change "Project" to "ChangeProject", which then becomes https://bsergcards.azurewebsites.net/ChangeProject/6
 
+## How to remove a project
+You can't (or can you)
 
 ## What is this
 A website i created in my free time, it is used to store information about personal ongoing projects
