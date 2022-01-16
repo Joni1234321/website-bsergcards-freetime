@@ -7,7 +7,8 @@ I was going to add a user system, so each user could only see their own Projects
 Therefore the projects are visible to all that enter the website, and everyone can edit everything.  
 
 ## How to Add a project
-No way to access the page unless you use the URL: https://bsergcards.azurewebsites.net/CreateProject
+No way to access the page unless you use the URL: https://bsergcards.azurewebsites.net/CreateProject  
+tags are seperated by comma
 
 ## How to edit project
 No way to access the page unless you use the URL: https://bsergcards.azurewebsites.net/ChangeProject/n  
