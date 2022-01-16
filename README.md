@@ -12,10 +12,10 @@ No way to access the page unless you use the URL: https://bsergcards.azurewebsit
 ## How to edit project
 No way to access the page unless you use the URL: https://bsergcards.azurewebsites.net/ChangeProject/n  
 where n is the project id.  
+
 For example  
 i have created a project with the URL https://bsergcards.azurewebsites.net/Project/6, and i want to change it!
 i would then change "Project" to "ChangeProject", which then becomes https://bsergcards.azurewebsites.net/ChangeProject/6
-
 
 
 ## What is this
